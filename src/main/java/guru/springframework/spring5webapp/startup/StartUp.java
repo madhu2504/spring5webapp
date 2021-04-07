@@ -53,10 +53,14 @@ public class StartUp implements CommandLineRunner {
 		bookRepository.save(spring);
 		
 		Publisher sanskar = new Publisher("sansakr","nayapalli, bhubaneswar","bhubaneswar","odisha",768028);
-		publisherRepository.save(sanskar);
+		
+		java.setPublisher(sanskar);
+		spring.setPublisher(sanskar);
 		
 		sanskar.getBooks().add(java);
 		sanskar.getBooks().add(spring);
+		
+		publisherRepository.save(sanskar);
 		
 		System.out.println("inside start up class");
 		System.out.println("number of authors : "+authorRepository.count());
